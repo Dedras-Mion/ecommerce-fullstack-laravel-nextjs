@@ -1,0 +1,119 @@
+'use client';
+
+import {useState, useEffect, useRef} from 'react';
+import {Check, ChevronsUpDown, Search, X} from 'lucide-react';
+
+const ComboBox = ({
+  title,
+  options,
+  placeholder,
+  containerStyle = {},
+  buttonStyle = {},
+  dropdownStyle = {},
+  inputStyle = {},
+  listItemStyle = {},
+}) => {
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
+  const inputRef = useRef(null);
+  const dropdownRef = useRef(null);
+
+  const filteredOptions = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
+
+  useEffect(() => {
+    if (open && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [open]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const handleClear = () => {
+    setValue('');
+    setSearchTerm('');
+  };
+
+  return (
+    <div
+      className='relative w-full max-w-[350px] sm:max-w-[400px] md:max-w-[450px] lg:max-w-[500px] mx-auto'
+      style={containerStyle}>
+      <button
+        type='button'
+        onClick={() => setOpen(!open)}
+        className={`flex w-full items-center justify-between rounded-md border border-gray-700 bg-black px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm text-gray-300 transition-all duration-300 ease-in-out hover:bg-[#101010] focus:outline-none focus:ring-2 focus:ring-[#23282C] ${
+          open ? 'ring-2 ring-[#23282C]' : ''
+        }`}
+        style={buttonStyle}
+        aria-expanded={open}>
+        <span className='truncate'>
+          {value ? options.find((option) => option.value === value)?.label : placeholder || `Select ${title}...`}
+        </span>
+        <ChevronsUpDown className='ml-2 h-4 w-4 shrink-0 opacity-50' />
+      </button>
+      {open && (
+        <div
+          ref={dropdownRef}
+          className='absolute z-50 w-full mt-1 sm:mt-2 bg-black text-gray-300 shadow-lg rounded-md border border-gray-700 overflow-hidden'
+          style={dropdownStyle}>
+          <div className='relative'>
+            <Search className='absolute left-3 top-1/2 transform -translate-y-1/2 h-3 w-3 sm:h-4 sm:w-4 text-gray-500' />
+            <input
+              ref={inputRef}
+              className='flex h-10 sm:h-12 w-full rounded-t-md border-0 bg-[#030303] pl-8 sm:pl-10 pr-8 sm:pr-10 py-2 text-xs sm:text-sm text-gray-300 placeholder-gray-500 outline-none focus:ring-2 focus:ring-inset focus:ring-[#23282C]'
+              style={inputStyle}
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder={`Search ${title}...`}
+            />
+            {searchTerm && (
+              <button onClick={handleClear} className='absolute right-3 top-1/2 transform -translate-y-1/2'>
+                <X className='h-3 w-3 sm:h-4 sm:w-4 text-gray-500' />
+              </button>
+            )}
+          </div>
+          <ul
+            className={`max-h-[180px] sm:max-h-[240px] overflow-auto p-0 m-0 ${
+              filteredOptions.length === 0 ? 'p-2' : ''
+            }`}>
+            {filteredOptions.length > 0 ? (
+              filteredOptions.map((option) => (
+                <li
+                  key={option.value}
+                  className={`relative flex cursor-pointer select-none items-center px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm outline-none transition-colors duration-300 ease-in-out hover:bg-[#101010] ${
+                    value === option.value ? 'bg-[#101010] text-white' : ''
+                  }`}
+                  style={listItemStyle}
+                  onClick={() => {
+                    setValue(option.value);
+                    setOpen(false);
+                    setSearchTerm('');
+                  }}>
+                  <span className='truncate'>{option.label}</span>
+                  {value === option.value && <Check className='ml-auto h-3 w-3 sm:h-4 sm:w-4 opacity-100' />}
+                </li>
+              ))
+            ) : (
+              <li className='relative flex cursor-default select-none items-center px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm outline-none text-gray-500'>
+                No results found
+              </li>
+            )}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default ComboBox;

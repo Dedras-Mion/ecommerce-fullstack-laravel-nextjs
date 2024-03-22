@@ -1,0 +1,11 @@
+# Ignore artifacts:
+build
+coverage
+bun.lockb
+*.lock
+node_modules/
+internals/generators/
+internals/scripts/
+package-lock.json
+package.json
+

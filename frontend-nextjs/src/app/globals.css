@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dropdown-active:active {
+  background-color: #0b6339 !important;
+}

@@ -1,0 +1,171 @@
+import { getFetch } from "@/utils/fetch";
+import { getBlurDataUrl, numberFormat, salePercent } from "@/utils/helpers";
+import Image from "next/image";
+import React from "react";
+
+export default async function ProductPage({ params }) {
+  const product = await getFetch(`/products/${decodeURI(params.slug)}`);
+
+  return (
+    <div>
+      <section className="overflow-hidden text-gray-400 bg-gray-900 body-font">
+        <div className="container px-5 py-24 mx-auto">
+          <div className="flex flex-wrap mx-auto lg:w-4/5">
+            {/* Carousel */}
+            <div className="carousel w-full max-w-md">
+              <div id="slide1" className="carousel-item relative w-full">
+                <Image
+                  src={product.primary_image}
+                  placeholder="blur"
+                  blurDataURL={getBlurDataUrl()}
+                  width={464}
+                  height={309}
+                  className="w-full"
+                  alt="product-primary-image"
+                />
+                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                  <a href={`#slide${product.images.length + 1}`} className="btn btn-circle">❮</a> 
+                  <a href="#slide2" className="btn btn-circle">❯</a>
+                </div>
+              </div> 
+              {product.images.map((img, index) => (
+                <div key={img.id} id={`slide${index + 2}`} className="carousel-item relative w-full">
+                  <Image
+                    src={img.image}
+                    placeholder="blur"
+                    blurDataURL={getBlurDataUrl()}
+                    width={464}
+                    height={309}
+                    className="w-full"
+                    alt="product-image"
+                  />
+                  <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href={`#slide${index + 1}`} className="btn btn-circle">❮</a> 
+                    <a href={`#slide${index === product.images.length - 1 ? 1 : index + 3}`} className="btn btn-circle">❯</a>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="w-full mt-6 lg:w-1/2 lg:pl-10 lg:py-6 lg:mt-0">
+              <h2 className="text-sm tracking-widest text-gray-500 title-font">
+                {product.category}
+              </h2>
+              <h1 className="mb-1 text-3xl font-medium text-white title-font">
+                {product.name}
+              </h1>
+              <div className="flex mb-4">
+                <span className="flex items-center">
+                  <svg
+                    fill="currentColor"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    className="w-4 h-4 text-indigo-400"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                  <svg
+                    fill="currentColor"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    className="w-4 h-4 text-indigo-400"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                  <svg
+                    fill="currentColor"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    className="w-4 h-4 text-indigo-400"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                  <svg
+                    fill="currentColor"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    className="w-4 h-4 text-indigo-400"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    className="w-4 h-4 text-indigo-400"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                  <span className="ml-3">4 Reviews</span>
+                </span>
+              </div>
+              <p className="leading-relaxed">{product.description}</p>
+              <div className="flex items-center pb-5 mt-6 mb-5 border-b-2 border-gray-800"></div>
+              <div className="flex">
+                <div className="flex items-center justify-center gap-4">
+                  <span>
+                    {product.is_sale ? (
+                      <>
+                        <del className="text-xs">
+                          {numberFormat(product.price)}$
+                        </del>
+                        <p className="mt-1 text-xs text-red-700">
+                          {numberFormat(product.sale_price)}$
+                        </p>
+                      </>
+                    ) : (
+                      <>
+                        <p className="text-xs">
+                          {numberFormat(product.price)}$
+                        </p>
+                      </>
+                    )}
+                  </span>
+
+                  <span>
+                    {product.is_sale && (
+                      <span>
+                        {salePercent(product.price, product.sale_price)}٪
+                        Discount
+                      </span>
+                    )}
+                  </span>
+                </div>
+                <button className="flex px-6 py-2 ml-auto text-white bg-indigo-500 border-0 rounded focus:outline-none hover:bg-indigo-600">
+                  Button
+                </button>
+                <button className="inline-flex items-center justify-center w-10 h-10 p-0 ml-4 text-gray-500 bg-gray-800 border-0 rounded-full">
+                  <svg
+                    fill="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    className="w-5 h-5"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
