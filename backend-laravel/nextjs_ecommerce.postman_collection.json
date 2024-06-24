@@ -1,0 +1,2548 @@
+{
+	"info": {
+		"_postman_id": "07a121d9-ea60-4d78-8497-fe84d2ac1a73",
+		"name": "nextjs_ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15915105"
+	},
+	"item": [
+		{
+			"name": "Admin Panel",
+			"item": [
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "Get Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "28|GuM3qUpHW9wLWZ68oc8DbcMf7v2avtH7AWJz5chs",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/categories/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"categories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "28|GuM3qUpHW9wLWZ68oc8DbcMf7v2avtH7AWJz5chs",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "parent_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "برگر بوقلمون 2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/categories",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Category",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "parent_id",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "پیتزا",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/categories/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"categories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Category",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/categories/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"categories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "12"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Categories",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "28|GuM3qUpHW9wLWZ68oc8DbcMf7v2avtH7AWJz5chs",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/categories",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Coupon",
+					"item": [
+						{
+							"name": "Get Coupon",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "28|GuM3qUpHW9wLWZ68oc8DbcMf7v2avtH7AWJz5chs",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/coupons/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"coupons",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Coupon",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "28|GuM3qUpHW9wLWZ68oc8DbcMf7v2avtH7AWJz5chs",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "code",
+											"value": "12345",
+											"type": "text"
+										},
+										{
+											"key": "percentage",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "expired_at",
+											"value": "2022-05-31 16:37:59",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/coupons",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"coupons"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Coupon",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "28|GuM3qUpHW9wLWZ68oc8DbcMf7v2avtH7AWJz5chs",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "code",
+											"value": "1236",
+											"type": "text"
+										},
+										{
+											"key": "percentage",
+											"value": "6",
+											"type": "text"
+										},
+										{
+											"key": "expired_at",
+											"value": "2022-05-31 17:37:59",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/coupons/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"coupons",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Coupon",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "28|GuM3qUpHW9wLWZ68oc8DbcMf7v2avtH7AWJz5chs",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/coupons/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"coupons",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "12"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Coupons",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "28|GuM3qUpHW9wLWZ68oc8DbcMf7v2avtH7AWJz5chs",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/coupons",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"coupons"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Get Users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "28|GuM3qUpHW9wLWZ68oc8DbcMf7v2avtH7AWJz5chs",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Users Copy",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "28|GuM3qUpHW9wLWZ68oc8DbcMf7v2avtH7AWJz5chs",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "28|GuM3qUpHW9wLWZ68oc8DbcMf7v2avtH7AWJz5chs",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "k",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "k@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "cellphone",
+											"value": "09185236698",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "28|GuM3qUpHW9wLWZ68oc8DbcMf7v2avtH7AWJz5chs",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "28|GuM3qUpHW9wLWZ68oc8DbcMf7v2avtH7AWJz5chs",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "پیتزا",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "test@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "cellphone",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "Get Products",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "28|GuM3qUpHW9wLWZ68oc8DbcMf7v2avtH7AWJz5chs",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "28|GuM3qUpHW9wLWZ68oc8DbcMf7v2avtH7AWJz5chs",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "28|GuM3qUpHW9wLWZ68oc8DbcMf7v2avtH7AWJz5chs",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "پیتزا مخصوص",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "primary_image",
+											"type": "file",
+											"src": "/E:/Nextjs/ecommerce-project/images/p3.jpg"
+										},
+										{
+											"key": "primary_image_blurDataURL",
+											"value": "data:image/webp;base64,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",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "16500",
+											"type": "text"
+										},
+										{
+											"key": "quantity",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "sale_price",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "date_on_sale_from",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "date_on_sale_to",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "images[0]",
+											"type": "file",
+											"src": "/E:/Nextjs/ecommerce-project/images/b3.jpg"
+										},
+										{
+											"key": "images[1]",
+											"type": "file",
+											"src": "/E:/Nextjs/ecommerce-project/images/d2.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "28|GuM3qUpHW9wLWZ68oc8DbcMf7v2avtH7AWJz5chs",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "پیتزا رست بیف",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "primary_image",
+											"type": "file",
+											"src": "/E:/Nextjs/ecommerce-project/images/p2.jpg",
+											"disabled": true
+										},
+										{
+											"key": "primary_image_blurDataURL",
+											"value": "data:image/webp;base64,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",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "130000",
+											"type": "text"
+										},
+										{
+											"key": "quantity",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "sale_price",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "date_on_sale_from",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "date_on_sale_to",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "images[0]",
+											"type": "file",
+											"src": "/E:/Nextjs/ecommerce-project/images/p5.jpg",
+											"disabled": true
+										},
+										{
+											"key": "images[1]",
+											"type": "file",
+											"src": "/E:/Nextjs/ecommerce-project/images/p7.jpg",
+											"disabled": true
+										},
+										{
+											"key": "_method",
+											"value": "PUT",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Product",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "13"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Order",
+					"item": [
+						{
+							"name": "list of Orders",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "29|sTLhLyo8kLm6izuvd9wvDXWvyqi5TQzYb7LhHFSY",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"orders"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "{{$randomFullName}}",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{$randomEmail}}",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456789",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "123456789",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// pm.test(\"Status code is 200\", function () {\r",
+											"//     pm.response.to.have.status(200);\r",
+											"// });\r",
+											"\r",
+											"console.log(pm.response)\r",
+											"// pm.collectionVariables.set(\"accessToken\", \"variable_value\");"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "ali@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456789",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/admin-panel/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin-panel",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Me",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "22|btvgnc5LS8Q3wB1xHPrKutxaCTK16mFA0KcjOXZJ",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/auth/me",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"auth",
+										"me"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "10|jVJKFkx8tDrpJGco0WNOdmklK2l2frIV5RR6BSXm",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/auth/logout",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Transaction",
+					"item": [
+						{
+							"name": "Chart",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/transactions/chart",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"transactions",
+										"chart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Transactions",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "29|sTLhLyo8kLm6izuvd9wvDXWvyqi5TQzYb7LhHFSY",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/admin-panel/transactions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin-panel",
+										"transactions"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "App",
+			"item": [
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "list of Categories",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/categories",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Contact us",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "cdd",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "csdc@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "subject",
+											"value": "llll",
+											"type": "text"
+										},
+										{
+											"key": "text",
+											"value": "kkkkkk",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/contact-us",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"contact-us"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "Get Products Tabs",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/products-tabs",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"products-tabs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/:slug",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										":slug"
+									],
+									"variable": [
+										{
+											"key": "slug",
+											"value": "پیتزا-رست-بیف"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Random Products",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/random-products?count=4",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"random-products"
+									],
+									"query": [
+										{
+											"key": "count",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Menu",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/menu?search=پیتزا&sortBy=max&category=2&page=2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"menu"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "پیتزا"
+										},
+										{
+											"key": "sortBy",
+											"value": "max"
+										},
+										{
+											"key": "category",
+											"value": "2"
+										},
+										{
+											"key": "page",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Order",
+					"item": [
+						{
+							"name": "Check Coupon",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "13|TZnEOBDag18vYNPaQ7OAcCY5MJYVzxAidpSmsmP1",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "code",
+											"value": "123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/check-coupon",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"check-coupon"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list of Addresses from User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "13|TZnEOBDag18vYNPaQ7OAcCY5MJYVzxAidpSmsmP1",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/user/addresses",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"addresses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Payment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "13|TZnEOBDag18vYNPaQ7OAcCY5MJYVzxAidpSmsmP1",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cart\" : [\r\n        {\r\n            \"id\" : 5,\r\n            \"qty\" : 2\r\n        }\r\n    ],\r\n    \"coupon\" : \"\",\r\n    \"address_id\" : 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/payment/send",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment",
+										"send"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Payment Verify",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "token",
+											"value": "dZeYrJg",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/payment/verify",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment",
+										"verify"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Profile",
+					"item": [
+						{
+							"name": "Info",
+							"item": [
+								{
+									"name": "Info",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "13|TZnEOBDag18vYNPaQ7OAcCY5MJYVzxAidpSmsmP1",
+													"type": "string"
+												},
+												{
+													"key": "password",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/profile/info",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"info"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Edit Info",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "13|TZnEOBDag18vYNPaQ7OAcCY5MJYVzxAidpSmsmP1",
+													"type": "string"
+												},
+												{
+													"key": "password",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "ali",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "ali3@gmail.com",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/profile/info/edit",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"info",
+												"edit"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Address",
+							"item": [
+								{
+									"name": "Get Addresses",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "13|TZnEOBDag18vYNPaQ7OAcCY5MJYVzxAidpSmsmP1",
+													"type": "string"
+												},
+												{
+													"key": "password",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/profile/addresses",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"addresses"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Address",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "13|TZnEOBDag18vYNPaQ7OAcCY5MJYVzxAidpSmsmP1",
+													"type": "string"
+												},
+												{
+													"key": "password",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "title",
+													"value": "csdc",
+													"type": "text"
+												},
+												{
+													"key": "cellphone",
+													"value": "09100000000",
+													"type": "text"
+												},
+												{
+													"key": "postal_code",
+													"value": "1234567892",
+													"type": "text"
+												},
+												{
+													"key": "province_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "city_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "address",
+													"value": "csdcsdc",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/profile/addresses/create",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"addresses",
+												"create"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Edit Address",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "13|TZnEOBDag18vYNPaQ7OAcCY5MJYVzxAidpSmsmP1",
+													"type": "string"
+												},
+												{
+													"key": "password",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "title",
+													"value": "hhh",
+													"type": "text"
+												},
+												{
+													"key": "cellphone",
+													"value": "09120000000",
+													"type": "text"
+												},
+												{
+													"key": "postal_code",
+													"value": "1234567892",
+													"type": "text"
+												},
+												{
+													"key": "province_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "city_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "address",
+													"value": "csdcsdc",
+													"type": "text"
+												},
+												{
+													"key": "address_id",
+													"value": "3",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/profile/addresses/edit",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"addresses",
+												"edit"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Address",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "13|TZnEOBDag18vYNPaQ7OAcCY5MJYVzxAidpSmsmP1",
+													"type": "string"
+												},
+												{
+													"key": "password",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "address_id",
+													"value": "3",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/profile/addresses/delete",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"addresses",
+												"delete"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get Orders",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "30|5Y7fW4DO1Y0eZ5T1D4HB2GAq6hrV7MQGYlHw4aA4",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/profile/orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Transactions",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "13|TZnEOBDag18vYNPaQ7OAcCY5MJYVzxAidpSmsmP1",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/profile/transactions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"transactions"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Me",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "10|jVJKFkx8tDrpJGco0WNOdmklK2l2frIV5RR6BSXm",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/me",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"me"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "cellphone",
+											"value": "09100000000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Check OTP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "otp",
+											"value": "780729",
+											"type": "text"
+										},
+										{
+											"key": "login_token",
+											"value": "$2y$10$KY1rUboSIsoC1i3pO2AV8.Oc9eJXT4l23xxCCnlv89DboexFWkFLG",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/check-otp",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"check-otp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Resend OTP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "login_token",
+											"value": "$2y$10$pRDD9Uojo/coIeGhplIYfOZXFspl8Rs8thtYLSIyJb/BPe9R586iS",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/resend-otp",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"resend-otp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "10|jVJKFkx8tDrpJGco0WNOdmklK2l2frIV5RR6BSXm",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/logout",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8000/api"
+		}
+	]
+}
